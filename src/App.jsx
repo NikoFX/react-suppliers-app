@@ -12,17 +12,16 @@ import UpdateSupplier from './pages/UpdateSupplier'
 function App() {
 
   const [suppliersList, setSuppliersLiset] = useState([])
-  const [fetchStatus, setFetchStatus] = useState(false)
 
   useEffect(() => {
-    setFetchStatus(false)
+
     fetch('https://northwind.vercel.app/api/suppliers')
       .then(res => res.json())
       .then(data => {
         setSuppliersLiset(data)
       })
       .finally(() => setFetchStatus(true))
-  }, [fetchStatus])
+  }, [])
 
   return (
     <div className="container">
@@ -30,7 +29,7 @@ function App() {
       <div className="main">
         <Routes>
           <Route path='' element={<Navigate to='home' />} />
-          <Route path='home' element={<Home suppliersList={suppliersList} setFetchStatus={setFetchStatus} />} />
+          <Route path='home' element={<Home suppliersList={suppliersList} setSuppliersLiset={setSuppliersLiset} />} />
           <Route path='add' element={<Add />} />
           <Route path='detail/:id' element={<Detail suppliersList={suppliersList} />} />
           <Route path='update/:id' element={<UpdateSupplier suppliersList={suppliersList} />} />

@@ -59,7 +59,8 @@ li {
   background-color: black;
 }
 
-table {
+.table {
+  width: 100%;
   border-collapse: collapse;
 }
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSnackbar } from 'notistack';
 
-function Home({ suppliersList, setFetchStatus }) {
+function Home({ suppliersList, setSuppliersLiset }) {
 
     const { enqueueSnackbar } = useSnackbar();
 
@@ -14,8 +14,10 @@ function Home({ suppliersList, setFetchStatus }) {
         fetch('https://northwind.vercel.app/api/suppliers/' + id, {
             method: 'DELETE'
         })
-            .then(() => setFetchStatus(false))
-            .finally(() => enqueueSnackbar('Supplier deleted!', { variant: 'success' }))
+            .then(() => {
+                setSuppliersLiset(suppliersList.filter(s => s.id !== id))
+                enqueueSnackbar('Supplier deleted!', { variant: 'success' })
+            })
     }
 
     const tableUpdate = (e, id) => {
