@@ -36,7 +36,7 @@ function UpdateSupplier({ suppliersList, fetchStatus }) {
 
     return (
         <section className="add">
-            <h1 className='add-supplier-h1'>Add supplier</h1>
+            <h1 className='add-supplier-h1'>Update supplier</h1>
             <form className='form' onSubmit={(e) => onSubmit(e)}>
                 <TextField fullWidth label="Company name" variant="outlined" name='companyName' margin='dense' required />
                 <TextField fullWidth label="Contact name" variant="outlined" name='contactName' margin='dense' required />
