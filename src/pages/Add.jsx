@@ -16,7 +16,14 @@ function Add() {
                 companyName: e.target.companyName.value,
                 contactName: e.target.contactName.value,
                 contactTitle: e.target.contactTitle.value,
-                address: { country: e.target.country.value }
+                address: {
+                    city: e.target.city.value,
+                    country:null,
+                    phone:null,
+                    postalCode:null,
+                    region:null,
+                    street:null
+                }
             })
         })
             .finally(() => window.location.assign('/home'))
@@ -29,7 +36,7 @@ function Add() {
                 <TextField fullWidth label="Company name" variant="outlined" name='companyName' margin='dense' required />
                 <TextField fullWidth label="Contact name" variant="outlined" name='contactName' margin='dense' required />
                 <TextField fullWidth label="Contact title" variant="outlined" name='contactTitle' margin='dense' required />
-                <TextField fullWidth label="Country" variant="outlined" name='country' margin='dense' required />
+                <TextField fullWidth label="City" variant="outlined" name='city' margin='dense' required />
                 <hr />
                 <Button type='submit' fullWidth variant="outlined" size='large'>ADD SUPPLIER</Button>
             </form>

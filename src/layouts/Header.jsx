@@ -5,11 +5,9 @@ function Header() {
     return (
         <nav>
             <ul className="nav-ul">
-                <li><Link className='nav-link' to="home">Home</Link></li>
+                <li><Link className='nav-link' to="home">Dashboard</Link></li>
                 <li><Link className='nav-link' to="add">Add Supplier</Link></li>
-                <li><Link className='nav-link' to="home">News</Link></li>
-                <li><Link className='nav-link' to="home">Contact</Link></li>
-                <li><Link className='nav-link' to="home">About</Link></li>
+                <li><Link className='nav-link' to="home">Exit</Link></li>
             </ul>
         </nav>
     )

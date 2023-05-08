@@ -11,7 +11,7 @@ function UpdateSupplier({ suppliersList }) {
         companyName: '',
         contactName: '',
         contactTitle: '',
-        address: ''
+        address: {city:""}
     })
 
     if (loop && suppliersList.length > 0) {
@@ -35,7 +35,14 @@ function UpdateSupplier({ suppliersList }) {
                 companyName: e.target.companyName.value,
                 contactName: e.target.contactName.value,
                 contactTitle: e.target.contactTitle.value,
-                address: { country: e.target.country.value }
+                address: {
+                    city: e.target.city.value,
+                    country:null,
+                    phone:null,
+                    postalCode:null,
+                    region:null,
+                    street:null
+                }
             })
         })
             .finally(() => window.location.assign('/home'))
@@ -48,7 +55,7 @@ function UpdateSupplier({ suppliersList }) {
                 <TextField fullWidth value={formData.companyName} onChange={(e) => changeHandle(e)} label="Company name" variant="outlined" name='companyName' margin='dense' required />
                 <TextField fullWidth value={formData.contactName} onChange={(e) => changeHandle(e)} label="Contact name" variant="outlined" name='contactName' margin='dense' required />
                 <TextField fullWidth value={formData.contactTitle} onChange={(e) => changeHandle(e)} label="Contact title" variant="outlined" name='contactTitle' margin='dense' required />
-                <TextField fullWidth value={formData.address.country} onChange={(e) => { setFormData(formData => ({ ...formData, address: { country: e.target.value } })) }} label="Country" variant="outlined" name='country' margin='dense' required />
+                <TextField fullWidth value={formData.address.city} onChange={(e) => { setFormData(formData => ({ ...formData, address: { city: e.target.value } })) }} label="City" variant="outlined" name='city' margin='dense' required />
                 <hr />
                 <Button type='submit' fullWidth variant="outlined" size='large'>UPDATE SUPPLIER</Button>
             </form>

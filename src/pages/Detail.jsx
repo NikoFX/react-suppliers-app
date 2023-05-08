@@ -4,11 +4,11 @@ import { useParams } from 'react-router-dom'
 
 function Detail({ suppliersList }) {
 
-  console.log(44444444444);
 
   let { id } = useParams()
   const detailObj = suppliersList.find(supplier => supplier.id === Number(id))
 
+  console.log(detailObj);
   return (
     detailObj ? (
       <div className="detail">
