@@ -2,7 +2,7 @@ Suppliers App
 > mustsee-movie-organizer-react
 
 
- ## [Demo](https://react-suppliers-app.vercel.app/home)
+ ## [Demo](https://react-suppliers-app.vercel.app)
  
  ![](header.png)
 
