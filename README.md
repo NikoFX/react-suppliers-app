@@ -19,7 +19,7 @@ Suppliers App
 
 - npm
 - node js
-- react js, react-router-dom, zustand, MUI
+- react js, react-router-dom, MUI
 
 A demo react application designed to manage suppliers for a business. The app provides a user-friendly interface to add, update, delete, and view supplier information. It also allows for sorting and filtering of the supplier list based on various criteria.
 
